@@ -12,7 +12,7 @@ authRouter.post('/login', authController.loginController);
 authRouter.post('/logout', authController.logoutController);
 // authRouter.post('/forgot-password',  authController.forgotPassword);
 authRouter.post('/reset-password/:token', authController.changePasswordController);
-authRouter.get('/me',authController.meController)
+// authRout  er.get('/me',authController.meController);
 
 
 

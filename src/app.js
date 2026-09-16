@@ -11,7 +11,7 @@ const { apiResponse } = require("./utils/apiResponse");
 const { asyncHandler } = require("./utils/asyncHandler");
 const authRouter = require("./modules/auth/auth.route");
 
-app.use(mongosanitize());
+app.use(mongosanitize()); 
 dotenv.config(); 
 app.use(cookieParser());
 app.use(morgan("dev"));
@@ -20,7 +20,7 @@ app.use(helmet());
 app.use(express.json());
 
 const userRouter = require('./modules/user/user.route');
-const categoryRouter = require('./modules/category/categoery.route');
+const categoryRouter = require('./modules/category/categoery.route'); 
 const productRouter = require("./modules/product/product.route");
 
 
@@ -37,7 +37,7 @@ app.get("/api/v1/health", (_req, res) =>
       "API is running",
     ),
   ),
-);
+); 
 
 app.get(
   "/api/v1/boom",
@@ -49,11 +49,10 @@ app.get(
   }),
 );
 
-
+  
 app.use(" api/v1/auth",authRouter);
 app.use("api/v1/user",userRouter);
-
 app.use(" api/v1/brand",brandRouter);
 app.use("api/v1/category",categoryRouter);
-
 app.use("/api/v1/product",productRouter)
+ 

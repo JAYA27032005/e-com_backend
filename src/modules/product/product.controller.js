@@ -13,7 +13,7 @@ const getSingleProduct = asyncHandler(async(req,res)=>{
 })
 
 const getAllSellerProduct = asyncHandler(async(req,res)=>{
-      const result = await ProductService.getAllSeller();
+      const result = await ProductService.getAllSeller(req.user._id);
     res.status(OK).json(apiResponse(OK,result,"fetch all seller product successfully"))
 })
 const getAllProductListFilter = asyncHandler(async(req,res)=>{
@@ -29,7 +29,8 @@ const deleteProduct = asyncHandler(async(req,res)=>{
       const result = await ProductService.delete();
     res.status(OK).json(apiResponse(OK,result,"single product deleted successfully"))
 })
-
+-D swagger-autogen
+swagger-ui-express
 const updateProductStatus = asyncHandler(async(req,res)=>{
       const result = await ProductService.updateStatus();
     res.status(OK).json(apiResponse(OK,result,"product status updated successfully"))
@@ -55,6 +56,4 @@ module.exports = {
     updateProductStatus,
     getAllProductAdmin,
     createProduct,
-,
-
 }

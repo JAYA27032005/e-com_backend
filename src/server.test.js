@@ -1,0 +1,1 @@
+const calculateTotalAmount = require('./utils/sum');

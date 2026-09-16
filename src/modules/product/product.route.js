@@ -21,10 +21,10 @@ productRouter.use(validationMiddleware)
 
 productRouter.get("/seller/mine",productController.getAllSellerProduct);
 
-productRouter.patch("/:id",productController.updateProduct);
+productRouter.patch("/:id",loadResource(ProductModel),productController.updateProduct);
 
 // delete a[pis]
-productRouter.delete("/:id",productController.deleteProduct);
+productRouter.delete("/:id",loadResource(ProductModel),productController.deleteProduct);
 
 // admin apis
 productRouter.post("/:id",productController,updateProductStatus);
